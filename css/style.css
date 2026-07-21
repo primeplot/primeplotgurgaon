@@ -87,20 +87,20 @@ nav li.has-caret:hover > .dropdown{display:block;}
 .btn-outline{background:transparent;color:var(--white);border:2px solid var(--white);}
 .btn-outline:hover{background:var(--white);color:var(--green-dark);}
 
-/* Hero form — 50% width */
-.hero-right{flex:1 1 280px;max-width:25%;}
-@media (max-width:860px){.hero-right{max-width:100%;}}
-.form-card{background:var(--white);color:var(--charcoal);border-radius:var(--radius);padding:26px;box-shadow:0 10px 30px rgba(0,0,0,.25);}
-.form-card h2{font-size:20px;margin-bottom:6px;}
-.form-card .sub{font-size:13px;color:var(--gray);margin-bottom:18px;}
-.form-card label{display:block;font-size:13px;font-weight:600;margin:12px 0 5px;}
+/* Hero form — compact card, narrower width */
+.hero-right{flex:0 1 380px;max-width:380px;}
+@media (max-width:860px){.hero-right{max-width:100%;flex-basis:100%;}}
+.form-card{background:var(--white);color:var(--charcoal);border-radius:16px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.25);}
+.form-card h2{font-size:19px;margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+.form-card .sub{font-size:12.5px;color:var(--gray);margin-bottom:16px;}
+.form-card label{display:block;font-size:12.5px;font-weight:600;margin:10px 0 4px;}
 .form-card input,.form-card select,.form-card textarea{
-  width:100%;padding:11px 12px;border:1px solid #DDD6C4;border-radius:8px;font-size:14px;font-family:inherit;background:var(--cream);
+  width:100%;padding:12px 14px;border:1px solid #E4DFCF;border-radius:10px;font-size:13.5px;font-family:inherit;background:var(--cream);
 }
-.form-card textarea{resize:vertical;min-height:70px;}
-.form-submit{width:100%;margin-top:16px;background:var(--green);color:var(--white);padding:13px;border:none;border-radius:8px;font-weight:700;font-size:15px;cursor:pointer;}
+.form-card textarea{resize:vertical;min-height:60px;}
+.form-submit{width:100%;margin-top:14px;background:var(--green);color:var(--white);padding:13px;border:none;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer;}
 .form-submit:hover{background:var(--green-dark);}
-.form-note{font-size:12px;color:var(--gray);margin-top:12px;text-align:center;}
+.form-note{font-size:11.5px;color:var(--gray);margin-top:10px;text-align:center;}
 
 /* Stats section (after hero) */
 .stats{padding:56px 0;background:linear-gradient(180deg,#EEF2F6,#E7EEF5);}

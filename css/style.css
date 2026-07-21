@@ -88,7 +88,7 @@ nav li.has-caret:hover > .dropdown{display:block;}
 .btn-outline:hover{background:var(--white);color:var(--green-dark);}
 
 /* Hero form — 50% width */
-.hero-right{flex:1 1 340px;max-width:25%;}
+.hero-right{flex:1 1 280px;max-width:25%;}
 @media (max-width:860px){.hero-right{max-width:100%;}}
 .form-card{background:var(--white);color:var(--charcoal);border-radius:var(--radius);padding:26px;box-shadow:0 10px 30px rgba(0,0,0,.25);}
 .form-card h2{font-size:20px;margin-bottom:6px;}

@@ -78,70 +78,7 @@ nav li.has-caret:hover > .dropdown{display:block;}
 .hero h1{color:var(--white);font-size:38px;line-height:1.25;margin-bottom:16px;}
 .hero h1 em{color:var(--gold);font-style:normal;}
 .hero p{font-size:16px;opacity:.92;margin-bottom:20px;max-width:520px;}
-/* ===== Playful-Style Form CSS — paste in your <style> or style.css ===== */
 
-.pg-hero-form{                                    /* LINE 1 */
-  background: #FFFFFF;                             /* LINE 2  → card background color */
-  border: 3px solid #0B3D2E;                        /* LINE 3  → chunky border color (dark green) */
-  border-radius: 22px;                              /* LINE 4  → corner roundness */
-  box-shadow: 7px 7px 0px 0px #C9A227;               /* LINE 5  → HARD SHADOW COLOR (gold) — change this for shadow color */
-  padding: 28px;
-  max-width: 380px;
-}
-
-.pg-hero-form-title{
-  font-size: 20px;
-  font-weight: 800;
-  color: #0B3D2E;                                    /* LINE 6  → title text color */
-  margin-bottom: 4px;
-}
-.pg-hero-form-sub{
-  font-size: 13px;
-  color: #5B6560;                                    /* LINE 7  → subtitle text color */
-  margin-bottom: 18px;
-}
-
-.pg-hero-field{ margin-bottom: 14px; }
-.pg-hero-field label{
-  display:block; font-size:11px; font-weight:800; text-transform:uppercase;
-  letter-spacing:.06em; margin-bottom:6px; color:#0B3D2E;   /* LINE 8 → label color */
-}
-.pg-hero-field input,
-.pg-hero-field select{
-  width:100%; padding:12px 14px;
-  border: 2.5px solid #CBD5E1;                        /* LINE 9  → input border (idle) */
-  border-radius: 12px;
-  background:#FAF7F0;                                 /* LINE 10 → input fill color */
-  font-size:14px;
-  transition: box-shadow .25s ease, border-color .25s ease;
-}
-.pg-hero-field input:focus,
-.pg-hero-field select:focus{
-  outline:none;
-  border-color:#C9A227;                               /* LINE 11 → input border on focus (gold) */
-  box-shadow: 3px 3px 0px 0px #C9A227;                 /* LINE 12 → focus hard shadow color */
-}
-
-.pg-hero-form-btn{
-  width:100%; margin-top:8px;
-  background:#C9A227;                                 /* LINE 13 → BUTTON BACKGROUND COLOR (gold) */
-  color:#0B3D2E;                                       /* LINE 14 → button text color (dark green) */
-  font-weight:800; font-size:15px;
-  border: 3px solid #0B3D2E;                            /* LINE 15 → button border color */
-  border-radius: 9999px;
-  padding: 14px;
-  cursor:pointer;
-  box-shadow: 5px 5px 0px 0px #0B3D2E;                  /* LINE 16 → button hard shadow color */
-  transition: transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease;
-}
-.pg-hero-form-btn:hover{
-  transform: translate(-2px,-2px);
-  box-shadow: 7px 7px 0px 0px #0B3D2E;
-}
-.pg-hero-form-btn:active{
-  transform: translate(2px,2px);
-  box-shadow: 2px 2px 0px 0px #0B3D2E;
-}
 .checklist li{margin-bottom:10px;font-size:15px;}
 .checklist li::before{content:"✓";color:var(--gold);font-weight:700;margin-right:10px;}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px;}

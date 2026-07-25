@@ -1,0 +1,268 @@
+/* =========================================================
+   PLAYFUL GEOMETRIC DESIGN SYSTEM
+   Drop-in CSS layer — include AFTER your existing style.css
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+:root{
+  /* Colors */
+  --pg-bg:            #FFFDF5;
+  --pg-fg:             #1E293B;
+  --pg-muted:          #F1F5F9;
+  --pg-muted-fg:       #64748B;
+  --pg-accent:         #8B5CF6;
+  --pg-accent-fg:      #FFFFFF;
+  --pg-secondary:      #F472B6;
+  --pg-tertiary:       #FBBF24;
+  --pg-quaternary:     #34D399;
+  --pg-border:         #E2E8F0;
+  --pg-input:          #FFFFFF;
+  --pg-card:           #FFFFFF;
+  --pg-ring:           #8B5CF6;
+
+  /* Typography */
+  --pg-font-heading: 'Outfit', system-ui, sans-serif;
+  --pg-font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Radius */
+  --pg-radius-sm: 8px;
+  --pg-radius-md: 16px;
+  --pg-radius-lg: 24px;
+  --pg-radius-full: 9999px;
+  --pg-border-width: 2px;
+
+  /* Hard "pop" shadows */
+  --pg-shadow: 4px 4px 0px 0px var(--pg-fg);
+  --pg-shadow-hover: 6px 6px 0px 0px var(--pg-fg);
+  --pg-shadow-active: 2px 2px 0px 0px var(--pg-fg);
+  --pg-shadow-card: 8px 8px 0px 0px var(--pg-border);
+  --pg-shadow-card-featured: 8px 8px 0px 0px var(--pg-secondary);
+
+  --pg-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ---------------------------------------------------------
+   BASE / TEXTURES
+   --------------------------------------------------------- */
+.pg-root{
+  background: var(--pg-bg);
+  color: var(--pg-fg);
+  font-family: var(--pg-font-body);
+}
+.pg-root h1, .pg-root h2, .pg-root h3, .pg-root h4{
+  font-family: var(--pg-font-heading);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.pg-container{max-width:72rem;margin:0 auto;padding:0 20px;}
+.pg-section{padding:96px 0;position:relative;overflow:hidden;}
+
+/* Dot-grid background texture */
+.pg-dot-grid{
+  background-image: radial-gradient(var(--pg-border) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+/* Diagonal stripe fill */
+.pg-stripes{
+  background-image: repeating-linear-gradient(45deg, var(--pg-muted) 0, var(--pg-muted) 8px, transparent 8px, transparent 16px);
+}
+
+/* Decorative primitive shapes */
+.pg-shape{position:absolute;pointer-events:none;z-index:0;}
+.pg-shape-circle{border-radius:50%;}
+.pg-shape-tri{width:0;height:0;}
+.pg-shape-pill{border-radius:var(--pg-radius-full);}
+
+/* ---------------------------------------------------------
+   BUTTONS
+   --------------------------------------------------------- */
+.pg-btn{
+  font-family: var(--pg-font-heading);
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: var(--pg-radius-full);
+  cursor: pointer;
+  border: var(--pg-border-width) solid var(--pg-fg);
+  transition: transform .3s var(--pg-bounce), box-shadow .3s var(--pg-bounce), background .2s ease;
+  text-decoration: none;
+}
+
+.pg-btn-primary{
+  background: var(--pg-accent);
+  color: var(--pg-accent-fg);
+  box-shadow: var(--pg-shadow);
+}
+.pg-btn-primary:hover{ transform: translate(-2px,-2px); box-shadow: var(--pg-shadow-hover); }
+.pg-btn-primary:active{ transform: translate(2px,2px); box-shadow: var(--pg-shadow-active); }
+
+.pg-btn-primary .pg-btn-icon{
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--pg-accent-fg); color: var(--pg-accent);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+
+.pg-btn-secondary{
+  background: transparent;
+  color: var(--pg-fg);
+  box-shadow: none;
+}
+.pg-btn-secondary:hover{ background: var(--pg-tertiary); }
+
+/* Color variants for rotation (confetti effect across CTAs) */
+.pg-btn-pink{ background:var(--pg-secondary); color:#fff; box-shadow:var(--pg-shadow); }
+.pg-btn-yellow{ background:var(--pg-tertiary); color:var(--pg-fg); box-shadow:var(--pg-shadow); }
+.pg-btn-mint{ background:var(--pg-quaternary); color:var(--pg-fg); box-shadow:var(--pg-shadow); }
+
+/* ---------------------------------------------------------
+   CARDS ("Sticker" card)
+   --------------------------------------------------------- */
+.pg-card{
+  background: var(--pg-card);
+  border: var(--pg-border-width) solid var(--pg-fg);
+  border-radius: var(--pg-radius-lg);
+  box-shadow: var(--pg-shadow-card);
+  padding: 28px;
+  position: relative;
+  transition: transform .3s var(--pg-bounce), box-shadow .3s var(--pg-bounce);
+}
+.pg-card:hover{ transform: rotate(-1deg) scale(1.02); }
+.pg-card-featured{ box-shadow: var(--pg-shadow-card-featured); }
+
+.pg-card-icon{
+  width: 56px; height: 56px; border-radius: 50%;
+  display:flex; align-items:center; justify-content:center;
+  border: var(--pg-border-width) solid var(--pg-fg);
+  background: var(--pg-tertiary);
+  position: absolute; top: -28px; left: 24px;
+  font-size: 24px;
+}
+.pg-card-title{ font-family: var(--pg-font-heading); font-weight:700; font-size:19px; margin: 20px 0 8px; }
+.pg-card-body{ color: var(--pg-muted-fg); font-size: 14.5px; line-height:1.6; }
+
+/* Blob / speech-bubble radius variant */
+.pg-blob{
+  border-radius: 24px 24px 24px 0;
+}
+.pg-arch{
+  border-radius: 9999px 9999px 0 0;
+}
+
+/* ---------------------------------------------------------
+   INPUTS
+   --------------------------------------------------------- */
+.pg-field{ margin-bottom:16px; }
+.pg-label{
+  display:block; font-family:var(--pg-font-heading); font-weight:700;
+  font-size:12px; text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px;
+}
+.pg-input, .pg-select, .pg-textarea{
+  width:100%; background:var(--pg-input); color:var(--pg-fg);
+  border: var(--pg-border-width) solid #CBD5E1; border-radius: var(--pg-radius-md);
+  padding: 12px 14px; font-family: var(--pg-font-body); font-size:14.5px;
+  box-shadow: 4px 4px 0px 0px transparent;
+  transition: border-color .2s ease, box-shadow .2s var(--pg-bounce);
+}
+.pg-input:focus, .pg-select:focus, .pg-textarea:focus{
+  outline:none; border-color: var(--pg-accent);
+  box-shadow: 4px 4px 0px 0px var(--pg-accent);
+}
+.pg-textarea{ resize:vertical; min-height:90px; }
+
+.pg-btn-submit{
+  width:100%; font-family:var(--pg-font-heading); font-weight:700; font-size:15px;
+  background:var(--pg-accent); color:#fff; border:var(--pg-border-width) solid var(--pg-fg);
+  border-radius: var(--pg-radius-full); padding:14px; cursor:pointer;
+  box-shadow: var(--pg-shadow); transition: transform .3s var(--pg-bounce), box-shadow .3s var(--pg-bounce);
+}
+.pg-btn-submit:hover{ transform: translate(-2px,-2px); box-shadow: var(--pg-shadow-hover); }
+.pg-btn-submit:active{ transform: translate(2px,2px); box-shadow: var(--pg-shadow-active); }
+
+/* ---------------------------------------------------------
+   HERO DECORATION
+   --------------------------------------------------------- */
+.pg-hero{ position:relative; }
+.pg-hero-blob{
+  position:absolute; width:520px; height:520px; border-radius:50%;
+  background: var(--pg-tertiary); opacity:.5; z-index:0;
+  top:-120px; left:-140px; filter: blur(0px);
+}
+.pg-hero-image-wrap{
+  position:relative; z-index:1;
+}
+.pg-hero-image-wrap img{
+  border-radius: 40% 60% 55% 45% / 55% 45% 60% 40%;
+  border: var(--pg-border-width) solid var(--pg-fg);
+}
+
+/* ---------------------------------------------------------
+   BADGE / "MOST POPULAR" STAR
+   --------------------------------------------------------- */
+.pg-star-badge{
+  position:absolute; top:-18px; right:-18px; z-index:2;
+  background:var(--pg-tertiary); color:var(--pg-fg);
+  border:var(--pg-border-width) solid var(--pg-fg);
+  border-radius:50%; width:88px; height:88px;
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--pg-font-heading); font-weight:800; font-size:11px; text-align:center;
+  transform: rotate(15deg); box-shadow: var(--pg-shadow);
+}
+
+/* ---------------------------------------------------------
+   MARQUEE
+   --------------------------------------------------------- */
+.pg-marquee{ overflow:hidden; white-space:nowrap; border-top:var(--pg-border-width) solid var(--pg-fg); border-bottom:var(--pg-border-width) solid var(--pg-fg); background:var(--pg-fg); padding:14px 0; }
+.pg-marquee-track{ display:inline-block; animation: pg-scroll 20s linear infinite; }
+.pg-marquee-track span{ color:#fff; font-family:var(--pg-font-heading); font-weight:700; font-size:14px; margin:0 26px; }
+@keyframes pg-scroll{ 0%{ transform:translateX(0);} 100%{ transform:translateX(-50%);} }
+
+/* ---------------------------------------------------------
+   ANIMATIONS: pop-in / wiggle
+   --------------------------------------------------------- */
+@keyframes pg-pop-in{
+  0%{ opacity:0; transform:scale(.7); }
+  70%{ opacity:1; transform:scale(1.05); }
+  100%{ transform:scale(1); }
+}
+.pg-pop{ animation: pg-pop-in .5s var(--pg-bounce) both; }
+
+@keyframes pg-wiggle{
+  0%{ transform:rotate(0deg); }
+  25%{ transform:rotate(3deg); }
+  75%{ transform:rotate(-3deg); }
+  100%{ transform:rotate(0deg); }
+}
+.pg-wiggle-hover:hover{ animation: pg-wiggle .4s ease; }
+
+/* JS-driven reveal-on-scroll hook — visible by default so content
+   never disappears if JS fails to load; JS only adds the pop-in bonus */
+.pg-reveal{ opacity:1; }
+.js-reveal-ready .pg-reveal{ opacity:0; transform:scale(.85); }
+.js-reveal-ready .pg-reveal.pg-in-view{ animation: pg-pop-in .5s var(--pg-bounce) both; }
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+@media (max-width: 768px){
+  .pg-section{ padding:56px 0; }
+  .pg-shadow-mobile-reduce{ box-shadow:2px 2px 0px 0px var(--pg-fg) !important; }
+  .pg-hero-blob{ display:none; }
+  .pg-btn{ min-height:48px; }
+}
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce){
+  .pg-pop, .pg-reveal.pg-in-view, .pg-marquee-track, .pg-wiggle-hover:hover, .pg-card:hover, .pg-btn, .pg-btn-submit{
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}

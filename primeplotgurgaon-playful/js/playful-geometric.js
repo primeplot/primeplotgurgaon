@@ -7,6 +7,7 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   document.addEventListener('DOMContentLoaded', function () {
+    document.documentElement.classList.add('js-reveal-ready');
 
     // --- Duplicate marquee content so the scroll loop is seamless ---
     document.querySelectorAll('.pg-marquee-track').forEach(function (track) {

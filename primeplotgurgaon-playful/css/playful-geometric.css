@@ -240,9 +240,11 @@
 }
 .pg-wiggle-hover:hover{ animation: pg-wiggle .4s ease; }
 
-/* JS-driven reveal-on-scroll hook */
-.pg-reveal{ opacity:0; transform:scale(.85); }
-.pg-reveal.pg-in-view{ animation: pg-pop-in .5s var(--pg-bounce) both; }
+/* JS-driven reveal-on-scroll hook — visible by default so content
+   never disappears if JS fails to load; JS only adds the pop-in bonus */
+.pg-reveal{ opacity:1; }
+.js-reveal-ready .pg-reveal{ opacity:0; transform:scale(.85); }
+.js-reveal-ready .pg-reveal.pg-in-view{ animation: pg-pop-in .5s var(--pg-bounce) both; }
 
 /* ---------------------------------------------------------
    RESPONSIVE

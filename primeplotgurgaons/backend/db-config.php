@@ -6,9 +6,9 @@
  * =========================================================
  */
 define('DB_HOST', 'localhost');              // Usually 'localhost' on Hostinger
-define('DB_NAME', 'u123456789_primeplot');    // Your database name (Hostinger prefixes with u123456789_)
-define('DB_USER', 'u123456789_dbuser');       // Your database username
-define('DB_PASS', 'YOUR_DB_PASSWORD_HERE');   // Your database password
+define('DB_NAME', 'u208677131_primeplot');    // Your database name (Hostinger prefixes with u123456789_)
+define('DB_USER', 'u208677131_primeplot');       // Your database username
+define('DB_PASS', 'Gurgaon@789#');   // Your database password
 
 /**
  * ADMIN LOGIN — change this password before going live!

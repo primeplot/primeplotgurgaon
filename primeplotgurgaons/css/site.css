@@ -127,10 +127,10 @@ body{ background: var(--pg-bg); }
 .pg-about-left{ flex:1 1 460px; }
 .pg-about-left h2{ font-size:30px; margin-bottom:16px; }
 .pg-about-left p{ font-size:14.5px; color:var(--pg-fg); line-height:1.7; margin-bottom:14px; }
-.pg-about-right{ flex:0 1 320px; }
+.pg-about-right{ flex:0 1 460px; }
 .pg-about-img-card{
   background:#fff; border:var(--pg-border-width) solid var(--pg-fg); border-radius:var(--pg-radius-lg);
-  padding:10px; box-shadow:6px 6px 0px 0px var(--pg-tertiary); max-width:320px; margin:0 auto;
+  padding:10px; box-shadow:6px 6px 0px 0px var(--pg-tertiary); max-width:460px; margin:0 auto;
 }
 .pg-about-img-card img{ border-radius:12px; width:100%; display:block; }
 .pg-about-caption{ font-family:var(--pg-font-heading); font-weight:700; font-size:13px; text-align:center; padding:12px 6px 4px; color:var(--pg-fg); }

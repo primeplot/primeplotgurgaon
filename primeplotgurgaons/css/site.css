@@ -134,6 +134,28 @@ body{ background: var(--pg-bg); }
 }
 .pg-about-img-card img{ border-radius:12px; width:100%; display:block; }
 .pg-about-caption{ font-family:var(--pg-font-heading); font-weight:700; font-size:13px; text-align:center; padding:12px 6px 4px; color:var(--pg-fg); }
+@media (max-width:520px){
+  .pg-about-right{ flex-basis:100%; }
+  .pg-about-img-card{ max-width:100%; }
+}
+
+/* ---- Our Projects Section ---- */
+.pg-projects-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; position:relative; z-index:1; }
+@media (max-width:900px){ .pg-projects-grid{ grid-template-columns:1fr; } }
+.pg-project-card{ padding:0; overflow:hidden; display:flex; flex-direction:column; }
+.pg-project-img{
+  width:100%; height:190px; object-fit:cover; display:block;
+  border-bottom:var(--pg-border-width) solid var(--pg-fg);
+}
+.pg-project-img-placeholder{
+  width:100%; height:190px; display:flex; align-items:center; justify-content:center;
+  font-size:44px; border-bottom:var(--pg-border-width) solid var(--pg-fg);
+  background:repeating-linear-gradient(135deg, var(--pg-muted), var(--pg-muted) 10px, #fff 10px, #fff 20px);
+}
+.pg-project-body{ padding:22px; flex:1; display:flex; flex-direction:column; }
+.pg-project-body h3{ font-size:18px; margin-bottom:8px; }
+.pg-project-body p{ font-size:13.5px; color:var(--pg-muted-fg); line-height:1.6; margin-bottom:18px; flex:1; }
+.pg-project-body .pg-btn{ align-self:flex-start; }
 
 /* ---- Testimonials ---- */
 .pg-testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; position:relative; z-index:1; }

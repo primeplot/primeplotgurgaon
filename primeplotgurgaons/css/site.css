@@ -156,7 +156,16 @@ body{ background: var(--pg-bg); }
 .pg-project-body h3{ font-size:18px; margin-bottom:8px; }
 .pg-project-body p{ font-size:13.5px; color:var(--pg-muted-fg); line-height:1.6; margin-bottom:18px; flex:1; }
 .pg-project-body .pg-btn{ align-self:flex-start; }
-
+/* ---- Appointment Banner ---- */
+.pg-appointment-banner{
+  position:relative; padding:90px 20px; text-align:center; color:#fff;
+  background-image: linear-gradient(rgba(10,20,15,.55), rgba(10,20,15,.65)), url('../images/appointment-bg.jpg');
+  background-size:cover; background-position:center; border-top:3px solid var(--pg-fg); border-bottom:3px solid var(--pg-fg);
+}
+.pg-appointment-eyebrow{ font-size:13px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; margin-bottom:16px; }
+.pg-appointment-banner h2{ color:#fff; font-size:38px; margin-bottom:18px; }
+.pg-appointment-banner .phone-line{ font-size:18px; margin-bottom:26px; }
+.pg-appointment-banner .phone-line a{ color:#fff; text-decoration:none; }
 /* ---- Testimonials ---- */
 .pg-testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; position:relative; z-index:1; }
 @media (max-width:900px){ .pg-testi-grid{ grid-template-columns:1fr; } }

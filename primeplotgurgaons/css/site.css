@@ -156,16 +156,18 @@ body{ background: var(--pg-bg); }
 .pg-project-body h3{ font-size:18px; margin-bottom:8px; }
 .pg-project-body p{ font-size:13.5px; color:var(--pg-muted-fg); line-height:1.6; margin-bottom:18px; flex:1; }
 .pg-project-body .pg-btn{ align-self:flex-start; }
+
 /* ---- Appointment Banner ---- */
 .pg-appointment-banner{
   position:relative; padding:90px 20px; text-align:center; color:#fff;
   background-image: linear-gradient(rgba(10,20,15,.55), rgba(10,20,15,.65)), url('../images/appointment-bg.jpg');
-  background-size:cover; background-position:center; border-top:3px solid var(--pg-fg); border-bottom:3px solid var(--pg-fg);
+  background-size:cover; background-position:center; border-top:var(--pg-border-width) solid var(--pg-fg); border-bottom:var(--pg-border-width) solid var(--pg-fg);
 }
 .pg-appointment-eyebrow{ font-size:13px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; margin-bottom:16px; }
 .pg-appointment-banner h2{ color:#fff; font-size:38px; margin-bottom:18px; }
 .pg-appointment-banner .phone-line{ font-size:18px; margin-bottom:26px; }
 .pg-appointment-banner .phone-line a{ color:#fff; text-decoration:none; }
+
 /* ---- Testimonials ---- */
 .pg-testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; position:relative; z-index:1; }
 @media (max-width:900px){ .pg-testi-grid{ grid-template-columns:1fr; } }
@@ -221,3 +223,24 @@ body{ background: var(--pg-bg); }
 .pg-blob-yellow{ background:var(--pg-tertiary); }
 .pg-blob-pink{ background:var(--pg-secondary); }
 .pg-blob-mint{ background:var(--pg-quaternary); }
+
+/* ---- FAQ Accordion ---- */
+.pg-faq-list{ max-width:760px; margin:0 auto; position:relative; z-index:1; }
+.pg-faq-item{
+  background:#fff; border:var(--pg-border-width) solid var(--pg-fg); border-radius:var(--pg-radius-md);
+  margin-bottom:16px; box-shadow:5px 5px 0px 0px var(--pg-border); overflow:hidden;
+}
+.pg-faq-question{
+  width:100%; text-align:left; background:none; border:none; cursor:pointer;
+  padding:18px 22px; font-family:var(--pg-font-heading); font-weight:700; font-size:15px; color:var(--pg-fg);
+  display:flex; justify-content:space-between; align-items:center; gap:14px;
+}
+.pg-faq-icon{
+  flex-shrink:0; width:30px; height:30px; border-radius:50%; background:var(--pg-tertiary);
+  border:2px solid var(--pg-fg); display:flex; align-items:center; justify-content:center;
+  font-weight:800; font-size:17px; transition: transform .3s var(--pg-bounce);
+}
+.pg-faq-item.open .pg-faq-icon{ transform:rotate(45deg); background:var(--pg-accent); color:#fff; }
+.pg-faq-answer{ max-height:0; overflow:hidden; transition: max-height .35s ease; }
+.pg-faq-answer p{ padding:0 22px 18px; font-size:14px; color:var(--pg-muted-fg); line-height:1.6; }
+.pg-faq-item.open .pg-faq-answer{ max-height:220px; }

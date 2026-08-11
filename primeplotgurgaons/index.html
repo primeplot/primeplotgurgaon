@@ -9,14 +9,6 @@
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://primeplotgurgaon.com/" />
 
-<style>
-  /* Force all content visible — bypasses any reveal/animation issue */
-  .pg-reveal{
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-  }
-</style>
 <!-- Open Graph / Social sharing -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Prime Plot Gurgaon — Book Your Free Site Visit" />
@@ -453,6 +445,7 @@
     </div>
   </div>
 </section>
+
 <!-- Make an Appointment Banner -->
 <section class="pg-appointment-banner">
   <div class="pg-appointment-eyebrow">Don't Hesitate To Contact Us</div>
@@ -460,6 +453,7 @@
   <p class="phone-line">Call: <a href="tel:+919667134627">+91-9667134627</a></p>
   <a href="#contact" class="pg-btn pg-btn-yellow">Enquire Now</a>
 </section>
+
 <!-- Testimonials -->
 <section class="pg-section pg-stripes" id="testimonials">
   <div class="pg-container">
@@ -581,6 +575,79 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="pg-section pg-dot-grid" id="faq">
+  <div class="pg-container">
+    <div class="pg-section-head pg-reveal">
+      <span class="pg-section-eyebrow">Got Questions?</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know before booking your plot with Prime Plot Gurgaon.</p>
+    </div>
+
+    <div class="pg-faq-list">
+      <div class="pg-faq-item pg-reveal">
+        <button class="pg-faq-question">
+          Do I need to pay any amount before the site visit?
+          <span class="pg-faq-icon">+</span>
+        </button>
+        <div class="pg-faq-answer">
+          <p>No. We never collect any booking amount before you've completed a physical site visit and reviewed the legal title documents with our team.</p>
+        </div>
+      </div>
+
+      <div class="pg-faq-item pg-reveal">
+        <button class="pg-faq-question">
+          Are the plots RERA registered and title-clear?
+          <span class="pg-faq-icon">+</span>
+        </button>
+        <div class="pg-faq-answer">
+          <p>Yes. Every plot we offer comes with verified, dispute-free title documents reviewed by our legal team before it is ever listed.</p>
+        </div>
+      </div>
+
+      <div class="pg-faq-item pg-reveal">
+        <button class="pg-faq-question">
+          What plot sizes are currently available?
+          <span class="pg-faq-icon">+</span>
+        </button>
+        <div class="pg-faq-answer">
+          <p>We currently offer plots from 50 Gaj to 300+ Gaj across Sector 46, Sector 95, Sohna Road, Golf Course Road, Dwarka Expressway and New Gurgaon.</p>
+        </div>
+      </div>
+
+      <div class="pg-faq-item pg-reveal">
+        <button class="pg-faq-question">
+          Do you help with registry and legal paperwork?
+          <span class="pg-faq-icon">+</span>
+        </button>
+        <div class="pg-faq-answer">
+          <p>Yes. Our team assists you end-to-end — from document verification and site measurement to registry support after purchase.</p>
+        </div>
+      </div>
+
+      <div class="pg-faq-item pg-reveal">
+        <button class="pg-faq-question">
+          Can I book a site visit on weekends?
+          <span class="pg-faq-icon">+</span>
+        </button>
+        <div class="pg-faq-answer">
+          <p>Absolutely — our team is available 7 days a week. Just fill the booking form or call/WhatsApp us to pick a convenient time.</p>
+        </div>
+      </div>
+
+      <div class="pg-faq-item pg-reveal">
+        <button class="pg-faq-question">
+          Do you offer flexible payment plans?
+          <span class="pg-faq-icon">+</span>
+        </button>
+        <div class="pg-faq-answer">
+          <p>Yes, flexible payment plans are available on most plot sizes. Speak with our team during your site visit for exact options.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Floating icons -->
 <div class="pg-floating">
   <a href="tel:+919667134627" class="pg-fab-call" aria-label="Call Us">📞</a>
@@ -676,6 +743,15 @@
 <script src="js/playful-geometric.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    // FAQ accordion toggle
+    document.querySelectorAll('.pg-faq-question').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.pg-faq-item');
+        var wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.pg-faq-item.open').forEach(function (el) { el.classList.remove('open'); });
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
     // Mobile menu toggle
     var toggle = document.getElementById('menuToggle');
     var nav = document.getElementById('mainNav');

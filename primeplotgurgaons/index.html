@@ -588,8 +588,8 @@
 <section class="pg-section pg-dot-grid" id="faq">
   <div class="pg-container">
     <div class="pg-section-head pg-reveal">
-      <span class="pg-section-eyebrow">Got Questions?</span>
-      <h2>Frequently Asked Questions</h2>
+      <span class="pg-faq-eyebrow-pill"><span class="dot"></span> GOOD QUESTIONS</span>
+            <h2>The Things People Ask</h2>
       <p>Everything you need to know before booking your plot with Prime Plot Gurgaon.</p>
     </div>
 
@@ -752,22 +752,22 @@
 <script src="js/playful-geometric.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // FAQ accordion toggle
     document.querySelectorAll('.pg-faq-question').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var item = btn.closest('.pg-faq-item');
-        var wasOpen = item.classList.contains('open');
-        document.querySelectorAll('.pg-faq-item.open').forEach(function (el) { el.classList.remove('open'); });
-        if (!wasOpen) item.classList.add('open');
-      });
+  btn.addEventListener('click', function () {
+    var item = btn.closest('.pg-faq-item');
+    var icon = btn.querySelector('.pg-faq-icon');
+    var wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.pg-faq-item.open').forEach(function (el) {
+      el.classList.remove('open');
+      var i = el.querySelector('.pg-faq-icon');
+      if (i) i.textContent = '+';
     });
-    // Mobile menu toggle
-    var toggle = document.getElementById('menuToggle');
-    var nav = document.getElementById('mainNav');
-    if (toggle && nav) {
-      toggle.addEventListener('click', function () {
-        nav.classList.toggle('mobile-open');
-      });
+    if (!wasOpen) {
+      item.classList.add('open');
+      if (icon) icon.textContent = '−';
+    }
+  });
+});
     }
 
     // Popup — show after 15 seconds

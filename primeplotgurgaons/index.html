@@ -21,7 +21,7 @@
 <meta name="twitter:description" content="Buy verified, clear-title residential & commercial plots in Gurgaon." />
 <meta name="twitter:image" content="https://primeplotgurgaon.com/images/prime-plot-logo.png" />
 
-  <style>
+<style>
   /* Force all content visible — bypasses any reveal/animation issue */
   .pg-reveal{
     opacity: 1 !important;
@@ -589,7 +589,7 @@
   <div class="pg-container">
     <div class="pg-section-head pg-reveal">
       <span class="pg-faq-eyebrow-pill"><span class="dot"></span> GOOD QUESTIONS</span>
-            <h2>The Things People Ask</h2>
+      <h2>The Things People Ask</h2>
       <p>Everything you need to know before booking your plot with Prime Plot Gurgaon.</p>
     </div>
 
@@ -752,22 +752,30 @@
 <script src="js/playful-geometric.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    // FAQ accordion toggle
     document.querySelectorAll('.pg-faq-question').forEach(function (btn) {
-  btn.addEventListener('click', function () {
-    var item = btn.closest('.pg-faq-item');
-    var icon = btn.querySelector('.pg-faq-icon');
-    var wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.pg-faq-item.open').forEach(function (el) {
-      el.classList.remove('open');
-      var i = el.querySelector('.pg-faq-icon');
-      if (i) i.textContent = '+';
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.pg-faq-item');
+        var icon = btn.querySelector('.pg-faq-icon');
+        var wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.pg-faq-item.open').forEach(function (el) {
+          el.classList.remove('open');
+          var i = el.querySelector('.pg-faq-icon');
+          if (i) i.textContent = '+';
+        });
+        if (!wasOpen) {
+          item.classList.add('open');
+          if (icon) icon.textContent = '−';
+        }
+      });
     });
-    if (!wasOpen) {
-      item.classList.add('open');
-      if (icon) icon.textContent = '−';
-    }
-  });
-});
+    // Mobile menu toggle
+    var toggle = document.getElementById('menuToggle');
+    var nav = document.getElementById('mainNav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function () {
+        nav.classList.toggle('mobile-open');
+      });
     }
 
     // Popup — show after 15 seconds

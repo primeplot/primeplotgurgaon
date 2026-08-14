@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /backend/
-
-Sitemap: https://primeplotgurgaon.com/sitemap.xml

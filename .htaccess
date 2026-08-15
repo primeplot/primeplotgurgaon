@@ -1,6 +1,15 @@
 # Enable clean URLs (remove .html extension)
 RewriteEngine On
 
+# 301 redirect old flat plot URLs to new /plots/ URLs (SEO — avoid duplicate content)
+RewriteRule ^50-gaj-plot-in-gurgaon/?$ /plots/50-gaj-plot-in-gurgaon [R=301,L]
+RewriteRule ^100-gaj-plot-in-gurgaon/?$ /plots/100-gaj-plot-in-gurgaon [R=301,L]
+RewriteRule ^150-gaj-plot-in-gurgaon/?$ /plots/150-gaj-plot-in-gurgaon [R=301,L]
+RewriteRule ^200-gaj-plot-in-gurgaon/?$ /plots/200-gaj-plot-in-gurgaon [R=301,L]
+RewriteRule ^300-gaj-plot-in-gurgaon/?$ /plots/300-gaj-plot-in-gurgaon [R=301,L]
+RewriteRule ^400-gaj-plot-in-gurgaon/?$ /plots/400-gaj-plot-in-gurgaon [R=301,L]
+RewriteRule ^500-gaj-plot-in-gurgaon/?$ /plots/500-gaj-plot-in-gurgaon [R=301,L]
+
 # Serve the .html file when someone requests the URL without extension
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
@@ -9,3 +18,4 @@ RewriteRule ^([^\.]+)$ $1.html [NC,L]
 # Optional: redirect .html URLs to the clean version (uncomment to force it)
 # RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 # RewriteRule ^ /%1 [NC,L,R=301]
+

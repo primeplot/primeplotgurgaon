@@ -1,0 +1,11 @@
+# Enable clean URLs (remove .html extension)
+RewriteEngine On
+
+# Serve the .html file when someone requests the URL without extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Optional: redirect .html URLs to the clean version (uncomment to force it)
+# RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+# RewriteRule ^ /%1 [NC,L,R=301]

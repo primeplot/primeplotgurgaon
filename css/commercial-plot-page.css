@@ -1,0 +1,23 @@
+/* ---- Types of Commercial Plots (icon list cards) ---- */
+.types-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; position:relative; z-index:1; }
+@media (max-width:900px){ .types-grid{ grid-template-columns:1fr; } }
+.type-card{ background:#fff; border:2px solid var(--pg-fg); border-radius:var(--pg-radius-lg); padding:22px; box-shadow:5px 5px 0px 0px var(--pg-border); }
+.type-card h4{ font-family:var(--pg-font-heading); font-size:15.5px; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+.type-card ul{ font-size:13px; color:var(--pg-fg); }
+.type-card ul li{ margin-bottom:6px; padding-left:18px; position:relative; }
+.type-card ul li::before{ content:"•"; position:absolute; left:0; color:var(--pg-accent); font-weight:800; }
+
+/* ---- Numbered factor cards (What Makes a Plot Valuable) ---- */
+.factor-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; position:relative; z-index:1; }
+@media (max-width:900px){ .factor-grid{ grid-template-columns:repeat(2,1fr); } }
+.factor-card{ background:#fff; border:2px solid var(--pg-fg); border-radius:var(--pg-radius-md); padding:18px; box-shadow:4px 4px 0px 0px var(--pg-border); }
+.factor-card .fnum{ font-family:var(--pg-font-heading); font-weight:800; font-size:22px; color:var(--pg-accent); margin-bottom:6px; }
+.factor-card h5{ font-size:13.5px; font-family:var(--pg-font-heading); margin-bottom:6px; }
+.factor-card p{ font-size:12.5px; color:var(--pg-muted-fg); line-height:1.5; }
+
+/* ---- Side by side comparison blocks (Main road vs Market) ---- */
+.side-compare{ display:flex; gap:24px; flex-wrap:wrap; position:relative; z-index:1; }
+.side-compare-card{ flex:1 1 320px; background:#fff; border:2px solid var(--pg-fg); border-radius:var(--pg-radius-lg); padding:24px; box-shadow:5px 5px 0px 0px var(--pg-border); }
+.side-compare-card h4{ font-size:16px; margin-bottom:12px; }
+.side-compare-card ul li{ font-size:13.5px; margin-bottom:8px; display:flex; gap:8px; }
+.side-compare-card ul li::before{ content:"✓"; color:var(--pg-quaternary); font-weight:800; flex-shrink:0; }

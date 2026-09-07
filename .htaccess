@@ -52,3 +52,5 @@ RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
 </IfModule>
 
+RewriteRule ^plots/?$ - [F,L]
+

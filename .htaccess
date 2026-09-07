@@ -2,8 +2,7 @@
 RewriteEngine On
 
 # 301 redirect old flat plot URLs to new /plots/ URLs (SEO — avoid duplicate content)
-RewriteRule ^plots/?$ - [F,L]
-Redirect 301 /plots/ https://primeplotgurgaon.com/plot/
+
 RewriteRule ^50-gaj-plot-in-gurgaon/?$ /plots/50-gaj-plot-in-gurgaon [R=301,L]
 RewriteRule ^100-gaj-plot-in-gurgaon/?$ /plots/100-gaj-plot-in-gurgaon [R=301,L]
 RewriteRule ^150-gaj-plot-in-gurgaon/?$ /plots/150-gaj-plot-in-gurgaon [R=301,L]
@@ -54,7 +53,7 @@ RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
 </IfModule>
 
-Redirect 301 /plots/ https://primeplotgurgaon.com/
+
 
 
 

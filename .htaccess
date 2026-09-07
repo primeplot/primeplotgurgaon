@@ -52,6 +52,8 @@ RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
 </IfModule>
 
+Redirect 301 /plots/ https://primeplotgurgaon.com/
+
 RewriteRule ^plots/?$ - [F,L]
 
 Redirect 301 /plots/ https://primeplotgurgaon.com/

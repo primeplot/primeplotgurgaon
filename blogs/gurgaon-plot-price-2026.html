@@ -62,34 +62,7 @@
   ]
 }
 </script>
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const faqQuestions = document.querySelectorAll(".faq-question");
-
-    faqQuestions.forEach(function (question) {
-
-        question.addEventListener("click", function () {
-
-            const faqItem = this.parentElement;
-
-            // Close other FAQs
-            document.querySelectorAll(".faq-item").forEach(function (item) {
-                if (item !== faqItem) {
-                    item.classList.remove("active");
-                }
-            });
-
-            // Toggle clicked FAQ
-            faqItem.classList.toggle("active");
-
-        });
-
-    });
-
-});
-</script>
-</head>
+ </head>
 <body class="pg-root">
 
 <!-- Top bar -->

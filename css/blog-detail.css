@@ -142,3 +142,29 @@
 .faq-item.active .faq-icon {
     transform: rotate(45deg);
 }
+/* FAQ Accordion */
+.pg-faq-answer {
+    display: none;
+    overflow: hidden;
+}
+
+.pg-faq-item.open .pg-faq-answer {
+    display: block;
+}
+
+.pg-faq-question {
+    width: 100%;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    text-align: left;
+}
+
+.pg-faq-icon {
+    float: right;
+    transition: transform 0.2s ease;
+}
+
+.pg-faq-item.open .pg-faq-icon {
+    transform: rotate(0deg);
+}

@@ -10,6 +10,7 @@ RewriteRule ^200-gaj-plot-in-gurgaon/?$ /plots/200-gaj-plot-in-gurgaon [R=301,L]
 RewriteRule ^300-gaj-plot-in-gurgaon/?$ /plots/300-gaj-plot-in-gurgaon [R=301,L]
 RewriteRule ^400-gaj-plot-in-gurgaon/?$ /plots/400-gaj-plot-in-gurgaon [R=301,L]
 RewriteRule ^500-gaj-plot-in-gurgaon/?$ /plots/500-gaj-plot-in-gurgaon [R=301,L]
+RewriteRule ^blogs/investment-in-property-in-gurgaon/?$ /blogs/investment-property-in-gurgaon [R=301,L]
 
 # Serve the .html file when someone requests the URL without extension
 RewriteCond %{REQUEST_FILENAME} !-d

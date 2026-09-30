@@ -36,3 +36,21 @@
     revealEls.forEach(function (el) { observer.observe(el); });
   });
 })();
+
+    // FAQ accordion (hardened: safe against duplicate binding)
+    document.querySelectorAll('.pg-faq-question').forEach(function (btn) {
+      if (btn.dataset.faqBound === '1') return;
+      btn.dataset.faqBound = '1';
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var item = btn.closest('.pg-faq-item');
+        var icon = btn.querySelector('.pg-faq-icon');
+        var wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.pg-faq-item.open').forEach(function (el) {
+          el.classList.remove('open');
+          var i = el.querySelector('.pg-faq-icon');
+          if (i) i.textContent = '+';
+        });
+        if (!wasOpen) { item.classList.add('open'); if (icon) icon.textContent = '−'; }
+      });
+    });

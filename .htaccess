@@ -1,7 +1,14 @@
-# Enable clean URLs (remove .html extension)
+
+# ==========================================
+# Prime Plot Gurgaon - .htaccess
+# Place in public_html/.htaccess
+# ==========================================
+
 RewriteEngine On
 
-# 301 redirect old flat plot URLs to new /plots/ URLs (SEO — avoid duplicate content)
+# ------------------------------------------
+# 1. Redirect old plot URLs to /plots/
+# ------------------------------------------
 
 RewriteRule ^50-gaj-plot-in-gurgaon/?$ /plots/50-gaj-plot-in-gurgaon [R=301,L]
 RewriteRule ^100-gaj-plot-in-gurgaon/?$ /plots/100-gaj-plot-in-gurgaon [R=301,L]
@@ -10,16 +17,41 @@ RewriteRule ^200-gaj-plot-in-gurgaon/?$ /plots/200-gaj-plot-in-gurgaon [R=301,L]
 RewriteRule ^300-gaj-plot-in-gurgaon/?$ /plots/300-gaj-plot-in-gurgaon [R=301,L]
 RewriteRule ^400-gaj-plot-in-gurgaon/?$ /plots/400-gaj-plot-in-gurgaon [R=301,L]
 RewriteRule ^500-gaj-plot-in-gurgaon/?$ /plots/500-gaj-plot-in-gurgaon [R=301,L]
+
+# ------------------------------------------
+# 2. Redirect legacy /plot/ URLs to /plots/
+# ------------------------------------------
+
+RewriteRule ^plot/100-gaj-plot-in-gurgaon/?$ /plots/100-gaj-plot-in-gurgaon [R=301,L]
+RewriteRule ^plot/200-gaj-plot-in-gurgaon/?$ /plots/200-gaj-plot-in-gurgaon [R=301,L]
+
+# ------------------------------------------
+# 3. Redirect old blog-detail URLs
+#    to the current clean blog URLs
+# ------------------------------------------
+
+RewriteRule ^blog-detail/gurgaon-plot-price-2026\.html$ /blogs/gurgaon-plot-price-2026 [R=301,L]
+RewriteRule ^blog-detail/investment-in-property-in-gurgaon\.html$ /blogs/investment-property-in-gurgaon [R=301,L]
+
+# ------------------------------------------
+# 4. Redirect old blog slug to corrected slug
+# ------------------------------------------
+
 RewriteRule ^blogs/investment-in-property-in-gurgaon/?$ /blogs/investment-property-in-gurgaon [R=301,L]
 
-# Serve the .html file when someone requests the URL without extension
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
+# ------------------------------------------
+# 5. Serve existing extensionless URLs
+#    using their matching .html files
+# ------------------------------------------
 
-# Optional: redirect .html URLs to the clean version (uncomment to force it)
-# RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
-# RewriteRule ^ /%1 [NC,L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [END]
+
+# ------------------------------------------
+# 6. Browser caching
+# ------------------------------------------
 
 <IfModule mod_expires.c>
     ExpiresActive On
@@ -35,28 +67,14 @@ RewriteRule ^([^\.]+)$ $1.html [NC,L]
     ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>
 
+# ------------------------------------------
+# 7. Security headers
+# ------------------------------------------
+
 <IfModule mod_headers.c>
-
-    # HSTS - force HTTPS
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-
-    # Prevent clickjacking
     Header always set X-Frame-Options "SAMEORIGIN"
-
-    # Prevent MIME-type sniffing
     Header always set X-Content-Type-Options "nosniff"
-
-    # Control referrer information
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
-
-    # Restrict browser features
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
-
 </IfModule>
-
-
-
-
-
-
-

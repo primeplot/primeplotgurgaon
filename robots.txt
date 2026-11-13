@@ -3,3 +3,8 @@ Allow: /
 Disallow: /backend/
 
 Sitemap: https://primeplotgurgaon.com/sitemap.xml
+
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://primeplotgurgaon.com/sitemap.xml
